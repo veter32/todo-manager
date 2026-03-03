@@ -19,7 +19,12 @@ Designed to support multiple clients in the future: web, Android, or desktop.
 - Java 17+
 - Gradle (optional, can use wrapper)
 
+## Documentation
+
+- [Docker Setup](docs/docker.md)
+
 ### Run the Server
 ```bash
 cd server
 ./gradlew bootRun
+```
