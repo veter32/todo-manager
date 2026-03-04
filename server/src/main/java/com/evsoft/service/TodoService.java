@@ -13,16 +13,20 @@
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  */
-package com.evsoft;
+package com.evsoft.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.evsoft.model.Todo;
+import org.springframework.stereotype.Service;
 
-@SpringBootApplication
-public class Server {
-    public static void main(String[] args) {
-        SpringApplication.run(Server.class, args);
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class TodoService {
+    public List<Todo> findAll() {
+        Todo item = new Todo(1L, "Title", false);
+        List<Todo> result = new ArrayList<>();
+        result.add(item);
+        return result;
     }
 }

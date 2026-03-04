@@ -13,16 +13,29 @@
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  */
-package com.evsoft;
+package com.evsoft.api;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.evsoft.model.Todo;
+import com.evsoft.service.TodoService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-public class Server {
-    public static void main(String[] args) {
-        SpringApplication.run(Server.class, args);
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/todos")
+@Tag(name = "Todos", description = "Operations related to TODO items")
+public class TodoController {
+    private final TodoService service;
+
+    public TodoController(TodoService service) {
+        this.service = service;
+    }
+
+    @GetMapping
+    public List<Todo> getAll() {
+        return service.findAll();
     }
 }

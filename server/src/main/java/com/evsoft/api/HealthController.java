@@ -13,16 +13,21 @@
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  */
-package com.evsoft;
+package com.evsoft.api;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-public class Server {
-    public static void main(String[] args) {
-        SpringApplication.run(Server.class, args);
+@RestController
+@RequestMapping("/api/health")
+@Tag(name = "Health", description = "Health check endpoints")
+public class HealthController {
+    @GetMapping
+    @Operation(summary = "Check server health", description = "Returns OK if the server is running")
+    public String check() {
+        return "OK";
     }
 }
