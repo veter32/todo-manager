@@ -16,10 +16,14 @@
 package com.evsoft.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.*;
 
+@Entity
 public class Todo {
 
     @Schema(description = "Unique identifier of the todo", example = "1")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Schema(description = "Title of the task", example = "Buy milk")
@@ -59,5 +63,16 @@ public class Todo {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    /**
+     * Validates the TO-DO item.
+     *
+     * @throws IllegalArgumentException if the title is null or blank
+     */
+    public void validate() {
+        if (title == null || title.isBlank()) {
+            throw new IllegalArgumentException("Title must not be empty");
+        }
     }
 }

@@ -18,24 +18,74 @@ package com.evsoft.api;
 import com.evsoft.model.Todo;
 import com.evsoft.service.TodoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST API controller for managing TODO items.
+ */
 @RestController
 @RequestMapping("/api/todos")
-@Tag(name = "Todos", description = "Operations related to TODO items")
+@Tag(name = "Todo", description = "Manage todos")
 public class TodoController {
-    private final TodoService service;
 
-    public TodoController(TodoService service) {
-        this.service = service;
+    private final TodoService todoService;
+
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
     }
 
+    /** Get all TODOs */
     @GetMapping
-    public List<Todo> getAll() {
-        return service.findAll();
+    public ResponseEntity<List<Todo>> getAll() {
+        return ResponseEntity.ok(todoService.findAll());
+    }
+
+    /** Get TODO by ID */
+    @GetMapping("/{id}")
+    public ResponseEntity<Todo> getById(@PathVariable Long id) {
+        return todoService.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    /** Add a new TODO */
+    @PostMapping
+    public ResponseEntity<Todo> add(@RequestBody Todo todo) {
+        todo.validate();
+        Todo saved = todoService.add(todo);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+    }
+
+    /** Update existing TODO */
+    @PutMapping("/{id}")
+    public ResponseEntity<Todo> update(@PathVariable Long id, @RequestBody Todo todo) {
+        todo.validate();
+        try {
+            Todo updated = todoService.update(id, todo);
+            return ResponseEntity.ok(updated);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    /** Delete TODO by ID */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        try {
+            todoService.delete(id);
+            return ResponseEntity.noContent().build();
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    /** Handle validation errors globally */
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleValidation(IllegalArgumentException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
     }
 }
