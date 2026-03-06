@@ -1,30 +1,13 @@
-# TODO Manager
+# Personal Task Manager
 
-Client/Server TODO manager application, built with Spring Boot backend.  
-Designed to support multiple clients in the future: web, Android, or desktop.
+A multi-module personal productivity tool designed for high performance and clean architecture.
 
-## Project Structure
+## Modules
+- **[Server](./server)**: Spring Boot REST API, JPA, MapStruct, and Integration Testing.
+- **[Client](./client)** (Coming Soon): Planned web interface.
 
-- `server/` – Spring Boot backend with REST API
-- `docs/` – Documentation, diagrams, and notes (optional)
-- `client/` – Future clients: web, Android, or desktop
+## Project Purpose
+This project demonstrates modern backend engineering practices, including DTO patterns, layered architecture, and automated CI/CD workflows.
 
-## Features
-
-- Basic REST API for managing TODO items
-
-## Getting Started
-
-### Prerequisites
-- Java 17+
-- Gradle (optional, can use wrapper)
-
-## Documentation
-
-- [Docker Setup](docs/docker.md)
-
-### Run the Server
-```bash
-cd server
-./gradlew bootRun
-```
+---
+Copyright (c) 2026 Vitalii Yeremenko. Licensed under the MIT License.
