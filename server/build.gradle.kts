@@ -1,15 +1,15 @@
 plugins {
 	java
-	id("org.springframework.boot") version "4.0.3"
-	id("io.spring.dependency-management") version "1.1.7"
+	id("org.springframework.boot") version "3.4.1"
+	id("io.spring.dependency-management") version "1.1.4"
 }
 
-group = "com.example"
+group = "com.evsoft"
 version = "0.0.1-SNAPSHOT"
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion.set(JavaLanguageVersion.of(17))
 	}
 }
 
@@ -18,18 +18,33 @@ repositories {
 }
 
 dependencies {
+	// Web
 	implementation("org.springframework.boot:spring-boot-starter-web")
+
+	// Data
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
-	implementation("org.springframework.boot:spring-boot-starter-security")
 	runtimeOnly("com.h2database:h2")
+
+	// Security
+	implementation("org.springframework.boot:spring-boot-starter-security")
+
+	// OpenAPI / Swagger
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
+
+	// Dev tools
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+	// Test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
-tasks.bootJar {
-	mainClass.set("com.evsoft.Server")
+	testImplementation("org.springframework.security:spring-security-test") // для Security тестов
+
+	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.bootJar {
+	mainClass.set("com.evsoft.Server")
 }
