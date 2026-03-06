@@ -78,16 +78,20 @@ Retrieves a list of all tasks.
 ## ⚠️ Error Responses
 
 ### Validation Error (400 Bad Request)
+```json
 {
 "title": "Title is required",
 "status": 400
 }
+```
 
 ### Not Found (404 Not Found)
+```json
 {
 "error": "Task not found with id: 99",
 "status": 404
 }
+```
 
 ---
 Copyright (c) 2026 Vitalii Yeremenko
