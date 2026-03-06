@@ -17,9 +17,13 @@ package com.evsoft.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
-public class Todo {
+public class Task {
 
     @Schema(description = "Unique identifier of the todo", example = "1")
     @Id
@@ -32,47 +36,12 @@ public class Todo {
     @Schema(description = "Indicates whether the task is completed", example = "false")
     private boolean completed;
 
-    public Todo() {
+    public Task() {
     }
 
-    public Todo(Long id, String title, boolean completed) {
+    public Task(Long id, String title, boolean completed) {
         this.id = id;
         this.title = title;
         this.completed = completed;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
-    /**
-     * Validates the TO-DO item.
-     *
-     * @throws IllegalArgumentException if the title is null or blank
-     */
-    public void validate() {
-        if (title == null || title.isBlank()) {
-            throw new IllegalArgumentException("Title must not be empty");
-        }
     }
 }

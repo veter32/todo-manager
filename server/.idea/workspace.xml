@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac7ca4b8-126a-44d3-b248-370c66135204" name="Changes" comment="" />
+    <list default="true" id="ac7ca4b8-126a-44d3-b248-370c66135204" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/dto/TaskRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/dto/TaskResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/mapper/TaskMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/api/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/api/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/model/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/repository/TodoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/evsoft/api/TodoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/evsoft/api/TaskControllerTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +71,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -89,6 +106,7 @@
   "keyToString": {
     "Gradle.Build server.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
+    "Gradle.TaskControllerTest.executor": "Run",
     "Gradle.TodoControllerTest.executor": "Run",
     "Gradle.server [bootRun].executor": "Run",
     "Gradle.server [bootTestRun].executor": "Run",
@@ -111,7 +129,34 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.TodoControllerTest">
+  <component name="RunManager" selected="Gradle.TaskControllerTest">
+    <configuration name="TaskControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.evsoft.api.TaskControllerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration name="TodoControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -198,9 +243,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TaskControllerTest" />
+        <item itemvalue="Gradle.server [bootRun]" />
         <item itemvalue="Gradle.TodoControllerTest" />
         <item itemvalue="Gradle.server [bootTestRun]" />
-        <item itemvalue="Gradle.server [bootRun]" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +269,7 @@
       <workItem from="1772575396346" duration="349000" />
       <workItem from="1772611906875" duration="8652000" />
       <workItem from="1772727765338" duration="7889000" />
-      <workItem from="1772783186171" duration="3538000" />
+      <workItem from="1772783186171" duration="13804000" />
     </task>
     <servers />
   </component>
