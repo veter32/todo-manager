@@ -1,3 +1,4 @@
 /server/.gradle
 /server/build
 /server/.idea
+/server/.db
