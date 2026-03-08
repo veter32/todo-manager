@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac7ca4b8-126a-44d3-b248-370c66135204" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/security.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/evsoft/api/SecurityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/config/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/config/OpenApiConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/evsoft/api/TaskControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/evsoft/api/TaskControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +111,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "feature-security-layer",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/dev/Home/todo-manager/server",
@@ -122,7 +124,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.Tests in 'com.evsoft.api'">
+  <component name="RunManager" selected="Gradle.server-prod [bootRun]">
     <configuration name="TaskControllerTest.shouldAddNewTaskSuccessfully" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -325,6 +327,7 @@
       <workItem from="1772611906875" duration="8652000" />
       <workItem from="1772727765338" duration="7889000" />
       <workItem from="1772783186171" duration="24902000" />
+      <workItem from="1772958711331" duration="1463000" />
     </task>
     <servers />
   </component>
