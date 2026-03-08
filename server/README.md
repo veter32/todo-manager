@@ -44,4 +44,5 @@ Windows `gradlew bootRun`
 Detailed technical guides are available in the `docs/` directory:
 
 * [** REST API Specification**](./docs/api.md) — Full list of endpoints, request/response JSON examples, and status codes.
+* [** Security API Specification**](./docs/security.md) — Information about security layer.
 * [** Docker Setup Guide**](./docs/docker.md) — Instructions on how to containerize the server and run it with PostgreSQL.
