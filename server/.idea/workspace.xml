@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac7ca4b8-126a-44d3-b248-370c66135204" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/profiles.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/api/HealthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/api/HealthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/api/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/api/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/mapper/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/mapper/TaskMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/evsoft/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/evsoft/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/evsoft/api/TaskControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/evsoft/api/TaskControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +44,6 @@
                 <item name="todo-server" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="todo-server" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -99,20 +88,28 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
     "Gradle.Build server.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.TaskControllerTest.executor": "Run",
+    "Gradle.TaskControllerTest.shouldAddNewTaskSuccessfully.executor": "Run",
+    "Gradle.TaskControllerTest.shouldReturnEmptyListWhenNoTasks.executor": "Run",
+    "Gradle.Tests in 'com.evsoft.api'.executor": "Run",
     "Gradle.TodoControllerTest.executor": "Run",
     "Gradle.server [bootRun].executor": "Run",
     "Gradle.server [bootTestRun].executor": "Run",
+    "Gradle.server-dev [bootRun].executor": "Run",
     "Gradle.server-prod [bootRun].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "feature-profiles",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/dev/Home/todo-manager/server",
@@ -121,12 +118,12 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "copyright.profiles",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.server-prod [bootRun]">
-    <configuration name="TaskControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Tests in 'com.evsoft.api'">
+    <configuration name="TaskControllerTest.shouldAddNewTaskSuccessfully" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,7 +136,61 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.evsoft.api.TaskControllerTest&quot;" />
+            <option value="&quot;com.evsoft.api.TaskControllerTest.shouldAddNewTaskSuccessfully&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskControllerTest.shouldReturnEmptyListWhenNoTasks" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.evsoft.api.TaskControllerTest.shouldReturnEmptyListWhenNoTasks&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'com.evsoft.api'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.evsoft.api.*&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -158,7 +209,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -237,15 +288,19 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.server-prod [bootRun]" />
+      <item itemvalue="Gradle.TaskControllerTest.shouldAddNewTaskSuccessfully" />
+      <item itemvalue="Gradle.Tests in 'com.evsoft.api'" />
+      <item itemvalue="Gradle.TaskControllerTest.shouldReturnEmptyListWhenNoTasks" />
       <item itemvalue="Gradle.server-dev [bootRun]" />
       <item itemvalue="Gradle.server [bootTestRun]" />
-      <item itemvalue="Gradle.TaskControllerTest" />
       <item itemvalue="Spring Boot.Server" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'com.evsoft.api'" />
+        <item itemvalue="Gradle.TaskControllerTest.shouldAddNewTaskSuccessfully" />
+        <item itemvalue="Gradle.TaskControllerTest.shouldReturnEmptyListWhenNoTasks" />
         <item itemvalue="Gradle.server-dev [bootRun]" />
-        <item itemvalue="Gradle.TaskControllerTest" />
         <item itemvalue="Gradle.server [bootTestRun]" />
       </list>
     </recent_temporary>

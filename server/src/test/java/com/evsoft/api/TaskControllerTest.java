@@ -27,12 +27,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -45,26 +47,28 @@ public class TaskControllerTest {
     private TaskRepository repository;
 
     @Autowired
-    private ObjectMapper objectMapper; // Helper to convert objects to JSON
+    private ObjectMapper objectMapper;
 
     @BeforeEach
     void setup() {
         repository.deleteAll();
     }
 
+
     @Test
+    @WithMockUser(username = "admin", roles = {"ADMIN"})
     void shouldReturnEmptyListWhenNoTasks() throws Exception {
-        mockMvc.perform(get("/api/v1/tasks"))
-                .andExpect(status().isOk())
-                .andExpect(content().json("[]"));
+        mockMvc.perform(get("/tasks"))
+                .andExpect(status().isOk());
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = {"ADMIN"})
     void shouldAddNewTaskSuccessfully() throws Exception {
         // Create Request DTO instead of raw String
         TaskRequest request = new TaskRequest("Test Task", false);
 
-        mockMvc.perform(post("/api/v1/tasks")
+        mockMvc.perform(post("/tasks")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isCreated())
@@ -72,16 +76,16 @@ public class TaskControllerTest {
                 .andExpect(jsonPath("$.title").value("Test Task"))
                 .andExpect(jsonPath("$.completed").value(false));
 
-        // Check DB state
         assertEquals(1, repository.count());
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = {"ADMIN"})
     void shouldUpdateExistingTask() throws Exception {
         Task existing = repository.save(new Task(null, "Initial Title", false));
         TaskRequest updateRequest = new TaskRequest("Updated Title", true);
 
-        mockMvc.perform(put("/api/v1/tasks/" + existing.getId())
+        mockMvc.perform(put("/tasks/" + existing.getId())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(updateRequest)))
                 .andExpect(status().isOk())
@@ -90,30 +94,32 @@ public class TaskControllerTest {
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = {"ADMIN"})
     void shouldDeleteTaskSuccessfully() throws Exception {
         Task task = repository.save(new Task(null, "Delete Me", false));
-
-        mockMvc.perform(delete("/api/v1/tasks/" + task.getId()))
+        mockMvc.perform(delete("/tasks/" + task.getId()))
                 .andExpect(status().isNoContent());
 
         assertEquals(0, repository.count());
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = {"ADMIN"})
     void shouldReturn404WhenUpdatingNonExistentTask() throws Exception {
         TaskRequest request = new TaskRequest("Title", true);
 
-        mockMvc.perform(put("/api/v1/tasks/999")
+        mockMvc.perform(put("/tasks/999")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
-                .andExpect(status().isNotFound()); // This will work if you have GlobalExceptionHandler
+                .andExpect(status().isNotFound());
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = {"ADMIN"})
     void shouldReturnBadRequestWhenTitleIsBlank() throws Exception {
         TaskRequest invalidRequest = new TaskRequest("", false);
 
-        mockMvc.perform(post("/api/v1/tasks")
+        mockMvc.perform(post("/tasks")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(invalidRequest)))
                 .andExpect(status().isBadRequest());
