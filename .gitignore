@@ -2,3 +2,6 @@
 /server/build
 /server/.idea
 /server/.db
+/client/android/.gradle
+/client/android/build
+/client/android/app/build
