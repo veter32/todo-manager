@@ -1,6 +1,8 @@
-package com.evsoft.todo.client;
+package com.evsoft.todo.client.ui;
 
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +10,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+import com.evsoft.todo.client.BuildConfig;
+import com.evsoft.todo.client.R;
+import com.evsoft.todo.client.api.NetworkService;
+import com.evsoft.todo.client.api.Task;
+import com.evsoft.todo.client.api.TaskApi;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
